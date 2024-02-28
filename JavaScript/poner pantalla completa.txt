@@ -1,0 +1,319 @@
+
+para poner imagen pantalla completa
+***********************************
+
+body{
+    background-image: url("");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+<a href="primera_pagina.html" target="_blank"> Ir primera pagina</a><br>
+<a href="primera_pagina.html" target="_self"> Ir segunda pagina</a><br>
+
+llamar a traves de una imagen
+*****************************
+<a href="http://www.kodikas.com.mx">
+   <img src="imagenes/persona.jpg" width="200" height="150">
+</a>
+
+
+
+javascript
+**********
+
+operadores: matematicos, relacion, logicos
+
+entrada por teclado
+*******************
+let nombre;
+let edad;
+
+nombre = prompt('Entre su nombre: ');
+edad = parse.Int(prompt("Entre su edad: "));
+
+salida
+******
+document.write()
+alert()
+console.log()
+let clave = document.getElementById('clave').value;
+document.getElementById('select1').selectedIndex;
+
+conversion
+**********
+parse.Float()
+parse.String()
+parse.Int()
+
+constante
+*********
+const pi = 3.1416;
+
+redondear
+*********
+let salida = pi.toFixed(2)
+
+enlace
+******
+<script src="./script.js"></script>
+
+Extension para ejecutar Javascript
+**********************************
+code runner
+live server 
+
+condicionales
+*************
+if(simple, compuesto, anidado, cascada)
+switch
+bucles(for, while, do/while)
+
+funciones con y sin parametros
+<script>
+        function mostrarMensaje() {
+            document.write("Cuidado<br>");
+            document.write("Ingrese su documento correctamente<br>");
+        }
+
+        mostrarMensaje();
+        mostrarMensaje();
+        mostrarMensaje();
+    </script>
+
+arreglos
+let sueldos;
+sueldos =new array(5);
+
+let semana=['lunes','martes',''miercoles','jueves','viernes']
+
+el uso de math
+
+'<br>'
+
+uso de fecha: 
+let fecha;
+            fecha = new Date();
+            document.write('Hoy es ');
+            document.write(fecha.getDate() + '/');
+            document.write((fecha.getMonth() + 1) + '/');
+            document.write(fecha.getFullYear());
+            document.write('<br>');
+            document.write('Es la hora ');
+            document.write(fecha.getHours() + ':');
+            document.write(fecha.getMinutes() + ':');
+            document.write(fecha.getSeconds());
+
+
+uso de formularios
+******************
+form <form> ... </form>
+  text <input type="text">
+  password <input type="password">
+  textarea <textarea> ... </textarea>
+  button <input type="button">
+  submit <input type="submit">
+  reset <input type="reset">
+  checkbox <input type="checkbox">
+  radio <input type="radio">
+  select <select> ... </select>
+  hidden <input type="hidden">
+
+trabajar con formularios
+************************
+<form>
+        <input type="button" onClick="incrementar()" value="incrementar">
+    </form>
+
+    <script>
+        let contador = 0;
+
+        function incrementar() {
+            contador++;
+            alert('El contador ahora vale :' + contador);
+        }
+    </script>
+
+
+
+
+formulario que permite ingresar el nombre y la edad
+***************************************************
+<form>
+        <p>Ingrese su nombre:<input type="text" id="nombre"></p>
+        <p>Ingrese su edad:<input type="text" id="edad"></p>
+        <p><input type="button" value="Confirmar" onClick="mostrar()"></p>
+    </form>
+
+    <script>
+        function mostrar() {
+            let nom = document.getElementById('nombre').value;
+            let ed = document.getElementById('edad').value;
+            alert('Ingresó el nombre:' + nom);
+            alert('Y la edad:' + ed);
+        }
+    </script>
+
+usando select
+*************
+<form>
+        <p><select id="select1" onChange="cambiarColor()">
+            <option value="ff0000">Rojo</option>
+            <option value="00ff00">Verde</option>
+            <option value="0000ff">Azul</option>
+        </select></p>
+        <p>Número de índice seleccionado del objeto SELECT:<input type="text" id="text1"></p>
+        <p>Texto seleccionado:<input type="text" id="text2"></p>
+        <p> Valor asociado:<input type="text" id="text3"></p>
+    </form>
+
+    <script>
+        function cambiarColor() {
+            let seleccion = document.getElementById('select1');
+            document.getElementById('text1').value = seleccion.selectedIndex;
+            document.getElementById('text2').value = seleccion.options[seleccion.selectedIndex].text;
+            document.getElementById('text3').value = seleccion.options[seleccion.selectedIndex].value;
+        }
+    </script>
+
+usando checkbox
+***************
+<form>
+        <input type="checkbox" id="checkbox1">JavaScript
+        <br>
+        <input type="checkbox" id="checkbox2">PHP
+        <br>
+        <input type="checkbox" id="checkbox3">JSP
+        <br>
+        <input type="checkbox" id="checkbox4">VB.Net
+        <br>
+        <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+
+    
+
+poner password
+**************
+<form>
+        Ingrese una clave:
+        <input type="password" id="clave">
+        <br>
+        <input type="button" value="Confirmar" onClick="verificar()">
+    </form>
+
+    <script>
+        function verificar() {
+            let clave = document.getElementById('clave').value;
+            if (clave.length < 5) {
+                alert('La clave no puede tener menos de 5 caracteres!!!');
+            } else {
+                alert('Largo de clave correcta');
+            }
+        }
+    </script>
+
+usando radio
+*************
+<form>
+        <input type="radio" id="radio1" name="estudios">Sin estudios
+        <br>
+        <input type="radio" id="radio2" name="estudios">Primarios
+        <br>
+        <input type="radio" id="radio3" name="estudios">Secundarios
+        <br>
+        <input type="radio" id="radio4" name="estudios">Universitarios
+        <br>
+        <input type="button" value="Mostrar" onClick="mostrarSeleccionado()">
+    </form>
+
+    <script>
+        function mostrarSeleccionado() {
+            if (document.getElementById('radio1').checked) {
+                alert('no tienes estudios');
+            }
+            if (document.getElementById('radio2').checked) {
+                alert('tienes estudios primarios');
+            }
+            if (document.getElementById('radio3').checked) {
+                alert('tienes estudios secundarios');
+            }
+            if (document.getElementById('radio4').checked) {
+                alert('tienes estudios universitarios');
+            }
+        }
+    </script>
+
+usando textarea
+***************
+<form>
+        <p><textarea id="curriculum" rows="10" cols="50"></textarea></p>
+        <p><input type="button" value="Mostrar" onClick="controlarCaracteres()"></p>
+    </form>
+
+    <script>
+        function controlarCaracteres() {
+            if (document.getElementById('curriculum').value.length > 2000) {
+                alert('curriculum muy largo');
+            } else {
+                alert('datos correctos');
+            }
+        }
+    </script>
+
+usando eventos
+**************
+onclik
+onfocus
+onblur
+onMouseOver
+onMouseOut
+onChange
+onLoad
+click
+dblclick
+keydown
+keyup
+focus 
+blur
+
+
+colocar el foco en un campo
+***************************
+document.getElementById('nombre').focus();
+
+
+ejercicios: todos estos ejercicios se deben hacer con funciones
+**********
+1- Hacer un programa usando una funcion que muestre el precio de compra de 5 articulos y luego calcular su itbis. Haz un script que te calcule el precio total que vas a pagar por tu compra. calcular:precio x itbis/100
+
+2- Escribe un programa que solicite al usuario ingresar el número de kilómetros recorridos por su coche y el número de litros consumidos . El script debe mostrar el consumo de combustible por kilómetro.
+
+3-  convertir a segundos una medida de tiempo dada en horas y minutos.
+
+4- Crear un array llamado meses y que almacene el nombre de los doce meses del año. Mostrar por pantalla los doce nombres utilizando la función
+
+5- En una clase de 5 alumnos se han realizado tres examenes y se requiere determinar el numero de: 
+    a- Alumnos que aprobaron todos los examenes 
+    b- Alumnos que aprobaron al menos un examen
+    c- Alumnos que aprobaron unicamente el ultimo examen.
+
+6- Hacer una aplicacion web que: reciba por teclado 5 sueldos, a cada uno de ellos 
+ se le calculara su: 1.2% de AFP, 2% de SS y su 5% de I/R si el sueldo pasa de: 
+ 33,500 pesos. Sacar tambien el promedio de los sueldos. Utilice los recursos 
+ que usted conoce para resolver este problema en javascript. Mostrar todos los sueldos 
+ con sus descuentos y el promedio.
+
+7- Hacer una aplicacion web que reciba 10 notas, saque el promedio y con el promedio
+ determinar: 
+   de 0-59 F
+      60-69 D
+      70-79 C
+      80-89 B
+      90-100 A
+
+  Mostrar el promedio de las notas en numero y letra en javascript
+
+
+Alt+96 poner backticks

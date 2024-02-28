@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" id="checkBox1">JavaScript
+        <br>
+        <input type="checkbox" id="checkBox2">PHP
+        <br>
+        <input type="checkbox" id="checkBox3">JSP
+        <br>
+        <input type="checkbox" id="checkBox4">VB.Net
+        <br>
+        <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+
+    <script>
+            function contarSeleccionados() {
+                let cant = 0;
+                if (document.getElementById('checkBox1').checked) {
+                    cant++;
+                }
+                if (document.getElementById('checkBox2').checked) {
+                    cant++;
+                }
+                if (document.getElementById('checkBox3').checked) {
+                    cant++;
+                }
+                if (document.getElementById('checkBox4').checked) {
+                    cant++;
+                }
+                alert('Conoce ' + cant + ' lenguajes');
+            }
+        </script>
+</body>
+</html>
